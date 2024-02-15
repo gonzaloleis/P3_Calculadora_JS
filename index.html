@@ -28,6 +28,21 @@
             var resultado = Math.abs(num);
             document.getElementById("numero").value = resultado;
         }
+
+        function add() {
+            var num = parseFloat(document.getElementById("numero").value);           
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+        }
+
+        function eq() {
+            var num2 = parseFloat(document.getElementById("numero").value);
+            var resultado = window.num1 + num2;
+            document.getElementById("numero").value = resultado;
+        }
+
+        
+
         </script>
     </head>
 
@@ -36,14 +51,23 @@
             <label for="numero">Número</label>
             <input type="number" id="numero" placeholder="Introduce un número">
         </div>
+
         <p><b>Info sobre el número</b></p>
+
         <div id="Operaciones unitarias">
             <h2>Operaciones unitarias</h2>
             <button id="cuadrado" onclick="sq()">x²</button>
             <button id="abs" onclick="absolute()">abs(x)</button>
             <button id="factorial" onclick="fact()">x!</button>
             <button id="raiz" onclick="sqr()">raiz</button>
+        </div>
 
+        <div id="Operaciones binarias">
+            <h2>Operaciones binarias</h2>
+            <button id="suma" onclick="add()">+</button>
+            
+
+            <button id="igual" onclick="eq()">=</button>
         </div>
     </body>
 
