@@ -14,9 +14,13 @@
             for (var i = 1; i <= num; i++) {
                 factorial *= i;
             }
-
-            // Mostrar el resultado en el campo de entrada
             document.getElementById("numero").value = factorial;
+        }
+
+        function sqr() {
+            var num = parseFloat(document.getElementById("numero").value);
+            var resultado = Math.sqrt(num);
+            document.getElementById("numero").value = resultado;
         }
         </script>
     </head>
@@ -31,6 +35,8 @@
             <h2>Operaciones unitarias</h2>
             <button id="cuadrado" onclick="sq()">x²</button>
             <button id="factorial" onclick="fact()">x!</button>
+            <button id="raiz" onclick="sqr()">raiz</button>
+
         </div>
     </body>
 
