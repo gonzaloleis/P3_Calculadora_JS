@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <h1>Calculadora de CORE</h1>
+        <script>
+            function sq() {
+            var num = document.getElementById("numero").value;
+            var resultado = num * num;
+            document.getElementById("numero").value = resultado;
+        }
+
+        function fact() {
+            var num = parseInt(document.getElementById("numero").value);            
+            var factorial = 1;
+            for (var i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            document.getElementById("numero").value = factorial;
+        }
+
+        function sqr() {
+            var num = parseFloat(document.getElementById("numero").value);
+            var resultado = Math.sqrt(num);
+            document.getElementById("numero").value = resultado;
+        }
+
+        function absolute() {
+            var num = parseFloat(document.getElementById("numero").value);
+            var resultado = Math.abs(num);
+            document.getElementById("numero").value = resultado;
+        }
+
+        function add() {
+            var num = parseFloat(document.getElementById("numero").value);           
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+        }
+
+        function sub() {
+            var num = parseFloat(document.getElementById("numero").value);
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+            window.operacion = 'resta';
+        }
+
+        function mul() {
+            var num = parseFloat(document.getElementById("numero").value);
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+            window.operacion = 'multiplicacion';
+        }
+
+        function eq() {
+            var num2 = parseFloat(document.getElementById("numero").value);
+            var resultado;
+            if (window.operacion === 'suma') {
+                resultado = window.num1 + num2;
+            } else if (window.operacion === 'resta') {
+                resultado = window.num1 - num2;
+            } else if (window.operacion === 'multiplicacion') {
+                resultado = window.num1 * num2;
+            }
+            document.getElementById("numero").value = resultado;
+        }
+
+        
+
+
+        </script>
+    </head>
+
+    <body>
+        <div id="introducir num">
+            <label for="numero">Número</label>
+            <input type="number" id="numero" placeholder="Introduce un número">
+        </div>
+
+        <p><b>Info sobre el número</b></p>
+
+        <div id="Operaciones unitarias">
+            <h2>Operaciones unitarias</h2>
+            <button id="cuadrado" onclick="sq()">x²</button>
+            <button id="abs" onclick="absolute()">abs(x)</button>
+            <button id="factorial" onclick="fact()">x!</button>
+            <button id="raiz" onclick="sqr()">raiz</button>
+        </div>
+
+        <div id="Operaciones binarias">
+            <h2>Operaciones binarias</h2>
+            <button id="suma" onclick="add()">+</button>
+            <button id="resta" onclick="sub()">-</button>
+            <button id="multiplicacion" onclick="mul()">*</button>
+
+            <button id="igual" onclick="eq()">=</button>
+        </div>
+    </body>
+
+    
+</html>
