@@ -49,6 +49,13 @@
             window.operacion = 'multiplicacion';
         }
 
+        function div() {
+            var num = parseFloat(document.getElementById("numero").value);
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+            window.operacion = 'division';
+        }
+
         function eq() {
             var num2 = parseFloat(document.getElementById("numero").value);
             var resultado;
@@ -58,6 +65,12 @@
                 resultado = window.num1 - num2;
             } else if (window.operacion === 'multiplicacion') {
                 resultado = window.num1 * num2;
+            } else if (window.operacion === 'division') {
+                if (num2 !== 0) {
+                    resultado = window.num1 / num2;
+                } else {
+                    alert("No se puede dividir por cero.");
+                }
             }
             document.getElementById("numero").value = resultado;
         }
@@ -74,7 +87,10 @@
             <input type="number" id="numero" placeholder="Introduce un número">
         </div>
 
-        <p><b>Info sobre el número</b></p>
+     
+            
+        <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
+        
 
         <div id="Operaciones unitarias">
             <h2>Operaciones unitarias</h2>
@@ -89,7 +105,7 @@
             <button id="suma" onclick="add()">+</button>
             <button id="resta" onclick="sub()">-</button>
             <button id="multiplicacion" onclick="mul()">*</button>
-
+            <button id="division" onclick="div()">/</button>
             <button id="igual" onclick="eq()">=</button>
         </div>
     </body>
