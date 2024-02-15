@@ -22,6 +22,12 @@
             var resultado = Math.sqrt(num);
             document.getElementById("numero").value = resultado;
         }
+
+        function absolute() {
+            var num = parseFloat(document.getElementById("numero").value);
+            var resultado = Math.abs(num);
+            document.getElementById("numero").value = resultado;
+        }
         </script>
     </head>
 
@@ -34,6 +40,7 @@
         <div id="Operaciones unitarias">
             <h2>Operaciones unitarias</h2>
             <button id="cuadrado" onclick="sq()">x²</button>
+            <button id="abs" onclick="absolute()">abs(x)</button>
             <button id="factorial" onclick="fact()">x!</button>
             <button id="raiz" onclick="sqr()">raiz</button>
 
