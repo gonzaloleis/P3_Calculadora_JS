@@ -42,13 +42,23 @@
             window.operacion = 'resta';
         }
 
+        function mul() {
+            var num = parseFloat(document.getElementById("numero").value);
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+            window.operacion = 'multiplicacion';
+        }
+
         function eq() {
-            var num2 = parseFloat(document.getElementById("numero").value);           
+            var num2 = parseFloat(document.getElementById("numero").value);
+            var resultado;
             if (window.operacion === 'suma') {
-                var resultado = window.num1 + num2;
+                resultado = window.num1 + num2;
             } else if (window.operacion === 'resta') {
-                var resultado = window.num1 - num2;
-            }            
+                resultado = window.num1 - num2;
+            } else if (window.operacion === 'multiplicacion') {
+                resultado = window.num1 * num2;
+            }
             document.getElementById("numero").value = resultado;
         }
 
@@ -78,6 +88,7 @@
             <h2>Operaciones binarias</h2>
             <button id="suma" onclick="add()">+</button>
             <button id="resta" onclick="sub()">-</button>
+            <button id="multiplicacion" onclick="mul()">*</button>
 
             <button id="igual" onclick="eq()">=</button>
         </div>
