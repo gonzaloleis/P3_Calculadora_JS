@@ -35,13 +35,25 @@
             document.getElementById("numero").value = '';
         }
 
+        function sub() {
+            var num = parseFloat(document.getElementById("numero").value);
+            window.num1 = num;
+            document.getElementById("numero").value = '';
+            window.operacion = 'resta';
+        }
+
         function eq() {
-            var num2 = parseFloat(document.getElementById("numero").value);
-            var resultado = window.num1 + num2;
+            var num2 = parseFloat(document.getElementById("numero").value);           
+            if (window.operacion === 'suma') {
+                var resultado = window.num1 + num2;
+            } else if (window.operacion === 'resta') {
+                var resultado = window.num1 - num2;
+            }            
             document.getElementById("numero").value = resultado;
         }
 
         
+
 
         </script>
     </head>
@@ -65,7 +77,7 @@
         <div id="Operaciones binarias">
             <h2>Operaciones binarias</h2>
             <button id="suma" onclick="add()">+</button>
-            
+            <button id="resta" onclick="sub()">-</button>
 
             <button id="igual" onclick="eq()">=</button>
         </div>
