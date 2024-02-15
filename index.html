@@ -1,6 +1,13 @@
 <html>
     <head>
         <h1>Calculadora de CORE</h1>
+        <script>
+            function sq() {
+            var num = document.getElementById("numero").value;
+            var resultado = num * num;
+            document.getElementById("numero").value = resultado;
+        }
+        </script>
     </head>
 
     <body>
@@ -8,8 +15,10 @@
             <label for="numero">Número</label>
             <input type="number" id="numero" placeholder="Introduce un número">
         </div>
-        <div>
-
+        <p><b>Info sobre el número</b></p>
+        <div id="Operaciones unitarias">
+            <h2>Operaciones unitarias</h2>
+            <button id="cuadrado" onclick="sq()">x²</button>
         </div>
     </body>
 
