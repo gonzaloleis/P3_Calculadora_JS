@@ -7,6 +7,17 @@
             var resultado = num * num;
             document.getElementById("numero").value = resultado;
         }
+
+        function fact() {
+            var num = parseInt(document.getElementById("numero").value);            
+            var factorial = 1;
+            for (var i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            // Mostrar el resultado en el campo de entrada
+            document.getElementById("numero").value = factorial;
+        }
         </script>
     </head>
 
@@ -19,6 +30,7 @@
         <div id="Operaciones unitarias">
             <h2>Operaciones unitarias</h2>
             <button id="cuadrado" onclick="sq()">x²</button>
+            <button id="factorial" onclick="fact()">x!</button>
         </div>
     </body>
 
